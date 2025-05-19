@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Selamat Ulang Tahun, Sayang!</title>
-  <style>
-    body { font-family: 'Comic Sans MS', cursive; background-color: #ffe6f0; color: #333; text-align: center; padding: 20px; }
-    h1 { color: #ff66b2; }
-    .gallery img { width: 200px; margin: 10px; border-radius: 10px; }
-    .button { background-color: #ff99cc; padding: 10px 20px; border-radius: 20px; color: white; text-decoration: none; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun!</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎂 Happy Birthday, [Nama Pacar]! 🎂</h1>
-  <p>Aku bikin ini spesial buat kamu karena kamu spesial 💖</p>
-  <a class="button" href="#surprise">Lihat Hadiahnya 🎁</a>
-
-  <div id="surprise">
-    <h2>Kenangan Manis Kita</h2>
-    <div class="gallery">
-      <img src="foto1.jpg" alt="Foto 1">
-      <img src="foto2.jpg" alt="Foto 2">
-    </div>
-
-    <h2>Playlist Untukmu 🎶</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/kode_playlistmu" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <div class="container">
+    <h1>🎉 Selamat Ulang Tahun, Sayang! 🎉</h1>
+    <p id="message"></p>
   </div>
+
+  <script>
+    const message = "Hari ini adalah hari spesialmu, dan aku bersyukur bisa merayakannya bersamamu. Terima kasih telah menjadi kamu yang begitu luar biasa. Semoga semua keinginanmu tercapai dan kamu selalu bahagia. Aku sayang kamu ❤️";
+    let i = 0;
+    const speed = 50;
+
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("message").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
